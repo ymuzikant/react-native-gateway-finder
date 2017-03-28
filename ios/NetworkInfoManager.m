@@ -1,17 +1,11 @@
-//
-//  NetworkInfoManager.m
-//  testupnp
-//
-//  Created by yehonatan ben zion Tuval on 24/02/2017.
-//  Copyright © 2017 livelock. All rights reserved.
-//
-
 #import "NetworkInfoManager.h"
 #import <SystemConfiguration/CaptiveNetwork.h>
 #import "ALNetwork.h"
 #include <ifaddrs.h>
 #include <arpa/inet.h>
 #import "rout.h"
+
+// Inspired by https://github.com/pusherman/react-native-network-info
 
 @implementation NetworkInfoManager
 
@@ -24,17 +18,17 @@
 
 +(NSString*)getBSSID
 {
-    NSString *bssid =[self getNetworkValueForKey:@"BSSID"];
+    NSString *bssid = [self getNetworkValueForKey:(NSString*)kCNNetworkInfoKeyBSSID];
     
     return bssid;
 }
 +(NSString*)getSSID
 {
-    NSString *bssid =[self getNetworkValueForKey:@"SSID"];
+    NSString *bssid =[self getNetworkValueForKey:(NSString*)kCNNetworkInfoKeySSID];
     
     return bssid;
 }
-//
+
 +(NSString*)getGatewayIP
 {
     NSString *str =   [ALNetwork externalIPAddress];
@@ -110,6 +104,5 @@
         return value;
     }
 }
-
 
 @end
