@@ -371,7 +371,7 @@
 
 + (NSString *)BSSID {
     /*! Get the interfaces */
-    NSArray *interfaces = (__bridge NSArray *) CNCopySupportedInterfaces();
+    NSArray *interfaces = (__bridge_transfer NSArray *) CNCopySupportedInterfaces();
     NSString *BSSID;
     
     /*! Cycle interfaces */
@@ -384,12 +384,13 @@
             CFRelease(networkDetails);
         }
     }
+    
     return BSSID;
 }
 
 + (NSString *)SSID {
     /*! Get the interfaces */
-    NSArray *interfaces = (__bridge NSArray *) CNCopySupportedInterfaces();
+    NSArray *interfaces = (__bridge_transfer NSArray *) CNCopySupportedInterfaces();
     NSString *SSID;
     
     /*! Cycle interfaces */
