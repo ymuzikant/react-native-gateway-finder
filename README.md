@@ -2,7 +2,7 @@
 
 ## Installation:
 * Run `npm install react-native-gateway-finder --save`
-* Run `react-native link react-native--gateway-finder`
+* Run `react-native link react-native-gateway-finder`
 
 ## Usage:
 ```javascript
