@@ -5,12 +5,7 @@
 #include <net/if.h>
 #include <string.h>
 #include <arpa/inet.h>
-
-#if TARGET_IPHONE_SIMULATOR
-#include <net/route.h>
-#else
 #include "route.h"
-#endif
 
 #define CTL_NET         4               /* network, see socket.h */
 
